@@ -1,8 +1,4 @@
-#!/usr/bin/env php
-
 <?php
-
-require_once __DIR__ . '/../vendor/autoload.php';
 
 use PhpAmqpLib\Connection\AMQPConnection;
 use PhpAmqpLib\Message\AMQPMessage;
@@ -17,5 +13,8 @@ $connection = new AMQPConnection('127.0.0.1', 5672, 'guest', 'guest', 'bench');
 $channel = $connection->channel();
 
 for ($i = 0; $i < $nb; $i++) {
-    $channel->basic_publish(new AMQPMessage("message$i"), 'bench');
+    $channel->basic_publish(new AMQPMessage("message$i"), 'bench', 'bench');
 }
+
+$channel->close();
+$connection->close();

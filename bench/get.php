@@ -1,8 +1,4 @@
-#!/usr/bin/env php
-
 <?php
-
-require_once __DIR__ . '/../vendor/autoload.php';
 
 use Swarrot\Processor\ProcessorInterface;
 use Swarrot\Broker\MessageProvider\PeclPackageMessageProvider;
@@ -18,11 +14,11 @@ class Processor implements ProcessorInterface
     }
 }
 
-if (!isset($argv[1])) {
+if (!isset($argv[2])) {
     throw new \BadFunctionCallException('First argument must be the name of the provider to bench');
 }
 
-if ('extension' === $argv[1]) {
+if ('ext' === $argv[1]) {
     $connection = new \AMQPConnection([
         'vhost' => 'bench'
     ]);
@@ -37,7 +33,7 @@ if ('extension' === $argv[1]) {
     $messageProvider = new PhpAmqpLibMessageProvider($connection->channel(), 'bench');
 }
 
-$maxMessages = isset($argv[2])? (int) $argv[2] : 1000;
+$maxMessages = isset($argv[3])? (int) $argv[3] : 1000;
 
 $stack = (new \Swarrot\Processor\Stack\Builder())
     ->push('Swarrot\Processor\MaxMessages\MaxMessagesProcessor')
