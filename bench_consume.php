@@ -53,6 +53,8 @@ $duration = round(microtime(true) - $startTime, 3);
 $realMemoryPeak = round(memory_get_peak_usage(true)/1024/1024, 2);
 $notRealMemoryPeak = round(memory_get_peak_usage()/1024/1024, 2);
 
-echo "Duration: $duration seconds\n";
-echo "real MemoryPeak: $realMemoryPeak MiB\n";
-echo "not real MemoryPeak: $notRealMemoryPeak MiB\n";
+echo "######################################\n";
+echo "# Duration:            $duration seconds\n";
+echo "# real MemoryPeak:     $realMemoryPeak MiB\n";
+echo "# not real MemoryPeak: $notRealMemoryPeak MiB\n";
+echo "######################################\n";
