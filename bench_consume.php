@@ -22,7 +22,7 @@ if (!isset($argv[1])) {
     throw new \BadFunctionCallException('First argument must be the name of the provider to bench');
 }
 
-if ('pecl' === $argv[1]) {
+if ('extension' === $argv[1]) {
     $connection = new \AMQPConnection([
         'vhost' => 'bench'
     ]);
