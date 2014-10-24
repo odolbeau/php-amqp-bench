@@ -1,0 +1,5 @@
+{
+    "require": {
+        "swarrot/swarrot": "~1.3"
+    }
+}
