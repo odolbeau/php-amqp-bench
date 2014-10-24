@@ -2,7 +2,7 @@
 
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Swarrot\Processor\ProcessorInterface;
 use Swarrot\Broker\MessageProvider\PeclPackageMessageProvider;
@@ -45,16 +45,5 @@ $stack = (new \Swarrot\Processor\Stack\Builder())
 ;
 $processor = $stack->resolve(new Processor());
 
-$startTime = microtime(true);
 $consumer = new Consumer($messageProvider, $processor);
 $consumer->consume(['max_messages' => $maxMessages]);
-
-$duration = round(microtime(true) - $startTime, 3);
-$realMemoryPeak = round(memory_get_peak_usage(true)/1024/1024, 2);
-$notRealMemoryPeak = round(memory_get_peak_usage()/1024/1024, 2);
-
-echo "######################################\n";
-echo "# Duration:            $duration seconds\n";
-echo "# real MemoryPeak:     $realMemoryPeak MiB\n";
-echo "# not real MemoryPeak: $notRealMemoryPeak MiB\n";
-echo "######################################\n";

@@ -1,12 +1,17 @@
-extension:
+init:
 	./prepare_rabbit.sh
-	php ./send_messages.php $(filter-out $@,$(MAKECMDGOALS))
-	php ./bench_consume.php extension $(filter-out $@,$(MAKECMDGOALS))
 
-lib:
-	./prepare_rabbit.sh
-	php ./send_messages.php $(filter-out $@,$(MAKECMDGOALS))
-	php ./bench_consume.php lib $(filter-out $@,$(MAKECMDGOALS))
+extension_publish:
+	php ./bench.php publish_extension $(filter-out $@,$(MAKECMDGOALS))
+
+lib_publish:
+	php ./bench.php publish_lib $(filter-out $@,$(MAKECMDGOALS))
+
+extension_get:
+	php ./bench.php get extension $(filter-out $@,$(MAKECMDGOALS))
+
+lib_get:
+	php ./bench.php get lib $(filter-out $@,$(MAKECMDGOALS))
 
 %:
 	@:
