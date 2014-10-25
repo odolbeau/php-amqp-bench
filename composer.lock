@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f9f2ac38c4a0241581d91fb8257b66d9",
+    "hash": "1a8c31c40591d368a1ee4d28428ba9e6",
     "packages": [
         {
             "name": "psr/log",
@@ -45,26 +45,26 @@
         },
         {
             "name": "swarrot/swarrot",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swarrot/swarrot.git",
-                "reference": "3d595e8ee2dd4eca75faedc0a23955af666e6b6b"
+                "reference": "eddf811bf0efc2ee2e894f84be44e477e8f7a17d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swarrot/swarrot/zipball/3d595e8ee2dd4eca75faedc0a23955af666e6b6b",
-                "reference": "3d595e8ee2dd4eca75faedc0a23955af666e6b6b",
+                "url": "https://api.github.com/repos/swarrot/swarrot/zipball/eddf811bf0efc2ee2e894f84be44e477e8f7a17d",
+                "reference": "eddf811bf0efc2ee2e894f84be44e477e8f7a17d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
                 "psr/log": "~1.0",
-                "symfony/options-resolver": ">=2.3"
+                "symfony/options-resolver": "~2.3"
             },
             "require-dev": {
-                "phpspec/prophecy": "~1.1",
-                "phpunit/phpunit": "~3.7",
+                "phpspec/prophecy-phpunit": "~1.0",
+                "phpunit/phpunit": "~4.0",
                 "videlalvaro/php-amqplib": "~2.0"
             },
             "suggest": {
@@ -75,7 +75,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -98,7 +98,62 @@
                 "swarrot",
                 "worker"
             ],
-            "time": "2014-07-17 08:14:27"
+            "time": "2014-10-25 11:07:27"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.5.6",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "6f177fca24200a5b97aef5ce7a5c98124a0f0db0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/6f177fca24200a5b97aef5ce7a5c98124a0f0db0",
+                "reference": "6f177fca24200a5b97aef5ce7a5c98124a0f0db0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-10-05 13:57:04"
         },
         {
             "name": "symfony/options-resolver",
@@ -210,6 +265,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
-    "platform": [],
+    "platform": {
+        "php": ">=5.4",
+        "ext-amqp": "*"
+    },
     "platform-dev": []
 }

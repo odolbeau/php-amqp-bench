@@ -6,11 +6,15 @@ extension](https://github.com/pdezwart/php-amqp).
 
 ## Installation
 
+Use composer to install dependencies:
+
     composer install
+
+You probably want to initialize the `bench` RabbitMQ vhost which is used to
+make this bench:
+
+    ./prepare_rabbit.sh
 
 ## Usage
 
-To test with 1000 messages:
-
-    make extension 1000
-    make lib 1000
+You can launch `./bench` to have a complete list of all available commands.
