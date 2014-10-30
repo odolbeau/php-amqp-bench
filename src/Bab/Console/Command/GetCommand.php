@@ -22,7 +22,7 @@ class GetCommand extends Command
         $this
             ->setName('get')
             ->setDescription('Try to get & ack some messages')
-            ->addArgument('provider', InputArgument::REQUIRED, 'Provider to test')
+            ->addArgument('provider', InputArgument::REQUIRED, 'Provider to test [ext|lib]')
             ->addOption('messages', 'm', InputOption::VALUE_OPTIONAL, 'How many messages to get ?', 1000)
         ;
     }

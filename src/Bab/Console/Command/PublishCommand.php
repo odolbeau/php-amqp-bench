@@ -23,7 +23,7 @@ class PublishCommand extends Command
         $this
             ->setName('publish')
             ->setDescription('publish some messages')
-            ->addArgument('provider', InputArgument::REQUIRED, 'Provider to test')
+            ->addArgument('provider', InputArgument::REQUIRED, 'Provider to test [ext|lib]')
             ->addOption('messages', 'm', InputOption::VALUE_OPTIONAL, 'How many messages to get ?', 1000)
         ;
     }
