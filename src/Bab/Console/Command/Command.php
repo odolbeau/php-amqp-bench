@@ -37,11 +37,35 @@ abstract class Command extends BaseCommand
         $table = new Table($output);
         $table
             ->setRows(array(
-                array('Duration', $formatter->formatTime($duration)),
+                array('Duration', $this->formatDuration((int) $duration)),
                 new TableSeparator(),
                 array('Memory peak', $formatter->formatMemory($memoryPeak)),
             ))
         ;
         $table->render();
+    }
+
+    /**
+     * formatDuration
+     *
+     * @param int $seconds
+     *
+     * @return string
+     */
+    protected function formatDuration($seconds)
+    {
+        $duration = '';
+        $minutes = floor($seconds / 60);
+        $seconds = $seconds - $minutes * 60;
+
+        if ($minutes > 0) {
+            $duration .= ' ' . $minutes . ' minutes';
+        }
+
+        if ($seconds > 0) {
+            $duration .= ' ' . $seconds . ' seconds';
+        }
+
+        return $duration;
     }
 }
